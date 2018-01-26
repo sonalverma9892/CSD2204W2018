@@ -1,0 +1,18 @@
+To create a trigger which will store greater than 10 values in numbe rtable: 
+Query 
+CREATE TRIGGER n1_numb AFTER INSERT ON number
+    -> FOR EACH ROW
+    -> BEGIN
+    -> IF new.n1 > 10
+    -> Then
+    -> INSERT INTO number (n1) VALUES (New.n1);
+    -> ELSE
+    -> INSERT INTO number (n1) VALUES (New.n1);
+    -> END IF
+    -> ;
+    -> END$$
+Query OK, 0 rows affected (0.08 sec)
+
+MariaDB [csd2204]> Select * FROM number;
+    -> $$
+Empty set (0.00 sec)
